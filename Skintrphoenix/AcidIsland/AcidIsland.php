@@ -38,7 +38,7 @@ class AcidIsland extends PluginBase implements Listener
     }
 	
 	public function onEnable(){
-		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 		$this->saveResource("config.yml");
 		$this->saveResource("IslandWorld.yml");
 		$this->config = new Config($this->getDataFolder()."config.yml", Config::YAML);
